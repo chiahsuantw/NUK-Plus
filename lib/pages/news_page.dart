@@ -174,7 +174,7 @@ class _NewsPageState extends State<NewsPage> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('今天還有'),
+                                Text('今天共有'),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [

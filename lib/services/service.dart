@@ -25,6 +25,11 @@ Future<File> get _studentInfoDataFile async {
   return File('$path/studentInfoData.json');
 }
 
+Future<File> get _courseTableFile async {
+  final path = await _localPath;
+  return File('$path/courseTableData.json');
+}
+
 Future<File> writeToFile(Future<File> file, String data) async {
   final myFile = await file;
   return myFile.writeAsString(data);
@@ -58,5 +63,9 @@ Future<void> fetchAndWriteData() async {
   response = await get(
       'https://nukcourse.herokuapp.com/getProgress/$account&$password');
   await writeToFile(_progressDataFile, utf8.decode(response.bodyBytes));
+
+  response =
+      await get('https://nukcourse.herokuapp.com/getTable/$account&$password');
+  await writeToFile(_courseTableFile, utf8.decode(response.bodyBytes));
   print('fetching and writing files finished');
 }

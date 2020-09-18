@@ -27,10 +27,12 @@ class _AboutPageState extends State<AboutPage> {
     final file1 = File('${directory.path}/studentInfoData.json');
     final file2 = File('${directory.path}/courseData.json');
     final file3 = File('${directory.path}/progressData.json');
+    final file4 = File('${directory.path}/courseTableData.json');
 
     file1.delete(recursive: false);
     file2.delete(recursive: false);
     file3.delete(recursive: false);
+    file4.delete(recursive: false);
   }
 
   Future<dynamic> _getInfo() async {
